@@ -78,23 +78,16 @@ for i, filter_name in enumerate(filters_name):
     # put outside the plot the text with the application of the filters
     applications = filter_to_applications.get(filter_name, [])
     if applications:
-        ax.text(max(max_w_lists)+250, i, ', '.join(applications), verticalalignment='center', fontsize=8)
-
-        # plot an X or a V to specify whether the filter is detecting the antibody
-        marker = 'X'
-        color = 'red'
+        ax.text(max(max_w_lists)+190, i, ', '.join(applications), verticalalignment='center', fontsize=12)
 
         # loop over the antibodies and plot a marker
         for i_ant, w_ant in enumerate(secondaries_antibodies_wavelenghts):
 
             # if the range is correct - plot a V, else anx X
             if w_min <= w_ant <= w_max:
-                ax.text(max(max_w_lists)+220+10*i_ant, i, '\u2713', verticalalignment='center', color='green', fontsize=10)
+                ax.text(max(max_w_lists)+160+10*i_ant, i, '\u2713', verticalalignment='center', color='green', fontsize=10)
             else:
-                ax.text(max(max_w_lists)+220+10*i_ant, i, '\u2717', verticalalignment='center', color='red', fontsize=8)
-
-
-
+                ax.text(max(max_w_lists)+160+10*i_ant, i, '\u2717', verticalalignment='center', color='red', fontsize=8)
 
 # legend for the antoboides lines
 label_antibodies = "Secondary Antibodies"
